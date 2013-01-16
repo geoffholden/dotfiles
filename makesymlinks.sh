@@ -3,13 +3,25 @@
 dir=~/dotfiles
 olddir=~/dotfiles.old
 
+files="vimrc vim test/passwd gitconfig gitconfig-host gitignore"
+
+hostname=$(hostname -s)
+
 cd $dir
-for entry in *; do
+for entry in $files; do
     if [ -e ~/.$entry ]; then
-        mkdir -p $olddir
-        mv ~/.$entry $olddir/
+        if [ -L ~/.$entry ]; then
+            rm ~/.$entry
+        else
+            mkdir -p $(dirname $olddir/.$entry)
+            mv ~/.$entry $olddir/
+        fi
     fi
 
-    ln -s $dir/$entry ~/.$entry
+    if [ -e $dir/$entry.$hostname ]; then
+        ln -s $dir/$entry.$hostname ~/.$entry
+    else
+        ln -s $dir/$entry ~/.$entry
+    fi
 done
 
