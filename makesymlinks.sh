@@ -3,7 +3,7 @@
 dir=~/dotfiles
 olddir=~/dotfiles.old
 
-files="vimrc vim test/passwd gitconfig gitconfig-host gitignore"
+files="vimrc vim gitconfig gitconfig-host gitignore"
 
 hostname=$(hostname -s)
 
