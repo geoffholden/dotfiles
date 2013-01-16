@@ -1,0 +1,13 @@
+[user]
+    name = Geoff Holden
+    email = gholden@ieee.org
+
+[color]
+    ui = auto
+
+[core]
+    excludesfile = ~/.gitignore
+
+[include]
+    path = .gitconfig-host
+
