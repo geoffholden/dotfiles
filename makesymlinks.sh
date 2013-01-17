@@ -18,9 +18,9 @@ for entry in $files; do
         fi
     fi
 
-    if [ -e $dir/$entry.$hostname ]; then
-        ln -s $dir/$entry.$hostname ~/.$entry
-    else
+    if [ -e $dir/hosts/$hostname/$entry ]; then
+        ln -s $dir/hosts/$hostname/$entry ~/.$entry
+    elif [ -e $dir/$entry ]; then
         ln -s $dir/$entry ~/.$entry
     fi
 done
