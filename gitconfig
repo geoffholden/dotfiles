@@ -11,3 +11,5 @@
 [include]
     path = .gitconfig-host
 
+[push]
+	default = current
