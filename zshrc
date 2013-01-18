@@ -76,6 +76,9 @@ local knownhosts
 knownhosts=( ${${${${(f)"$(<$HOME/.ssh/known_hosts)"}:#[0-9]*}%%\ *}%%,*} ) 
 zstyle ':completion:*:(ping|telnet|mtr|ssh|scp|sftp):*' hosts $knownhosts
 
-alias ls='ls --color=auto'
+ls --version 2> /dev/null > /dev/null
+if [ $? -eq 0 ]; then
+    alias ls='ls --color=auto'
+fi
 alias sz='source ~/.zshrc'
 
