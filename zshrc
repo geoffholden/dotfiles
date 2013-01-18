@@ -41,6 +41,7 @@ PR_NO_COLOR="%{$terminfo[sgr0]%}"
 
 
 bindkey -v # Set Vi mode
+bindkey -M vicmd -s '#' 'I#\e\n' # Comment out line
 
 autoload -Uz vcs_info
  
@@ -76,4 +77,5 @@ knownhosts=( ${${${${(f)"$(<$HOME/.ssh/known_hosts)"}:#[0-9]*}%%\ *}%%,*} )
 zstyle ':completion:*:(ping|telnet|mtr|ssh|scp|sftp):*' hosts $knownhosts
 
 alias ls='ls --color=auto'
+alias sz='source ~/.zshrc'
 
