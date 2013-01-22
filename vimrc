@@ -11,7 +11,7 @@ set ofu=syntaxcomplete#Complete
 
 " Theme
 set t_Co=256
-colorscheme desert
+colorscheme molokai
 
 " JSON
 autocmd BufRead,BufNewFile *.json setfiletype json
