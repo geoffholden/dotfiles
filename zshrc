@@ -82,8 +82,9 @@ zstyle ':completion:*:(ping|telnet|mtr|ssh|scp|sftp):*' hosts $knownhosts
 ls --version 2> /dev/null > /dev/null
 if [ $? -eq 0 ]; then
     alias ls='ls --color=auto'
-else
-    alias ls='ls -G'
 fi
 alias sz='source ~/.zshrc'
+
+export CLICOLOR=1     
+export LSCOLORS=ExFxBxDxCxegedabagacad
 
