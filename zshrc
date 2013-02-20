@@ -18,7 +18,7 @@ setopt ALL_EXPORT
 setopt TYPESET_SILENT
 
 setopt globdots pushdtohome cdablevars autolist
-setopt correctall autocd recexact longlistjobs
+setopt autocd recexact longlistjobs
 setopt autoresume histignoredups pushdsilent clobber
 setopt autopushd pushdminus extendedglob rcquotes mailwarning
 setopt autoparamslash
