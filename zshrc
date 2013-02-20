@@ -85,3 +85,6 @@ if [ $? -eq 0 ]; then
 fi
 alias sz='source ~/.zshrc'
 
+export CLICOLOR=1     
+export LSCOLORS=ExFxBxDxCxegedabagacad
+

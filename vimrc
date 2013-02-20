@@ -13,6 +13,8 @@ set ofu=syntaxcomplete#Complete
 set t_Co=256
 colorscheme molokai
 
+syntax enable
+
 " JSON
 autocmd BufRead,BufNewFile *.json setfiletype json
 autocmd Syntax json sou ~/.vim/syntax/json.vim
