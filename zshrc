@@ -22,6 +22,7 @@ setopt autocd recexact longlistjobs
 setopt autoresume histignoredups pushdsilent clobber
 setopt autopushd pushdminus extendedglob rcquotes mailwarning
 setopt autoparamslash
+unsetopt correct correctall
 
 zmodload -a zsh/stat stat
 zmodload -a zsh/zpty zpty
