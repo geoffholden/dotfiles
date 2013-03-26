@@ -23,6 +23,10 @@ autocmd Syntax json sou ~/.vim/syntax/json.vim
 autocmd BufRead,BufNewFile *.proto setfiletype proto
 autocmd Syntax proto sou ~/.vim/syntax/proto.vim
 
+" Arduino keywords.txt
+autocmd BufRead,BufNewFile keywords.txt setlocal ft=keywords
+autocmd FileType keywords setlocal noexpandtab
+
 " Vim UI
 set number
 set nohlsearch
