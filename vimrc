@@ -27,6 +27,9 @@ autocmd Syntax proto sou ~/.vim/syntax/proto.vim
 autocmd BufRead,BufNewFile keywords.txt setlocal ft=keywords
 autocmd FileType keywords setlocal noexpandtab
 
+" Arduino Sketches
+autocmd BufRead,BufNewFile *.pde,*.ino set filetype=cpp
+
 " Vim UI
 set number
 set nohlsearch
