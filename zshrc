@@ -4,6 +4,9 @@ HOSTNAME=$(hostname -s)
 
 # Main options
 unsetopt BG_NICE
+unsetopt AUTO_CD
+unsetopt CDABLE_VARS
+
 setopt CORRECT
 setopt INTERACTIVE_COMMENTS
 setopt AUTO_MENU
