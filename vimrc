@@ -29,6 +29,7 @@ autocmd FileType keywords setlocal noexpandtab
 
 " Arduino Sketches
 autocmd BufRead,BufNewFile *.pde,*.ino set filetype=cpp
+autocmd BufRead,BufNewFile *.pde,*.ino setlocal ts=2 sts=2 sw=2
 
 " Vim UI
 set number
