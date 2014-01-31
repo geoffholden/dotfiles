@@ -67,6 +67,7 @@ precmd () {
 setopt prompt_subst
 PROMPT='%F{10}[$HOSTNAME[0,3]] %F{12}%c${vcs_info_msg_0_} %% %{$reset_color%}'
 
+fpath=(${HOME}/.zsh/functions $fpath)
 autoload -U compinit
 compinit
 
