@@ -84,6 +84,8 @@ local knownhosts
 knownhosts=( ${${${${(f)"$(<$HOME/.ssh/known_hosts)"}:#[0-9]*}%%\ *}%%,*} ) 
 zstyle ':completion:*:(ping|telnet|mtr|ssh|scp|sftp):*' hosts $knownhosts
 
+compctl -g '~/.teamocil/*(:t:r)' teamocil
+
 ls --version 2> /dev/null > /dev/null
 if [ $? -eq 0 ]; then
     alias ls='ls --color=auto'
