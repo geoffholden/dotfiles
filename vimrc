@@ -55,3 +55,6 @@ set shiftwidth=4
 set shiftround
 set expandtab
 
+set statusline=%F%m%r%h%w\ %{fugitive#statusline()}\ [%l,%c]\ [%L,%p%%]
+set laststatus=2
+
