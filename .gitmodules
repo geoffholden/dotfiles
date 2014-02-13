@@ -19,3 +19,9 @@
 [submodule "vim/bundle/vim-arduino-snippets"]
 	path = vim/bundle/vim-arduino-snippets
 	url = https://github.com/sudar/vim-arduino-snippets
+[submodule "vim/bundle/vim-git"]
+	path = vim/bundle/vim-git
+	url = https://github.com/tpope/vim-git.git
+[submodule "vim/bundle/vim-fugitive"]
+	path = vim/bundle/vim-fugitive
+	url = https://github.com/tpope/vim-fugitive.git
