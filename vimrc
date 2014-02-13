@@ -1,7 +1,16 @@
 " General Option
 set nocompatible
 
+filetype off
+
+" Load pathogen for plugin management
+runtime bundle/vim-pathogen/autoload/pathogen.vim
+execute pathogen#infect()
+
+set noswapfile
+
 " Events
+filetype on
 filetype plugin indent on
 
 " In makefiles do not expand tabs
