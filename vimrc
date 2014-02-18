@@ -58,3 +58,5 @@ set expandtab
 set statusline=%F%m%r%h%w\ %{fugitive#statusline()}\ [%l,%c]\ [%L,%p%%]
 set laststatus=2
 
+let mapleader = ","
+
