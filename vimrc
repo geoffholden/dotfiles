@@ -59,4 +59,7 @@ set statusline=%F%m%r%h%w\ %{fugitive#statusline()}\ [%l,%c]\ [%L,%p%%]
 set laststatus=2
 
 let mapleader = ","
+set spelllang=en_ca
+set spell
+nmap <silent> <leader>s :set spell!<CR>
 
