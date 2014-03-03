@@ -63,4 +63,5 @@ let mapleader = ","
 set spelllang=en_ca
 set spell
 nmap <silent> <leader>s :set spell!<CR>
+nnoremap <silent> <Leader>b :TagbarToggle<CR>
 

@@ -13,3 +13,7 @@
 
 [push]
 	default = current
+[init]
+	templatedir = ~/.git_template
+[alias]
+	ctags = !.git/hooks/ctags
