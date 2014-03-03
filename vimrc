@@ -46,6 +46,7 @@ set nohlsearch
 set incsearch
 set ruler
 set scrolloff=4
+set cursorline
 
 " Text Formatting
 set autoindent
