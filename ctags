@@ -3,4 +3,7 @@
 --exclude=.git
 
 --langmap=c++:.c++.cc.cp.cpp.cxx.h.h++.hh.hp.hpp.hxx.C.H.ino.pde
+--c++-kinds=+p
+--fields=+iaS
+--extra=+q
 
