@@ -65,6 +65,16 @@ set spell
 nmap <silent> <leader>s :set spell!<CR>
 nnoremap <silent> <Leader>b :TagbarToggle<CR>
 
+highlight ColorColumn ctermbg=234 guibg=#293739
+if exists('+colorcolumn')
+    set colorcolumn=80
+endif
+
+function! StripWhitespace ()
+    exec ':%s/ \+$//gc'
+endfunction
+map ,w :call StripWhitespace ()<CR>
+
 " neocomplete
 let g:acp_enableAtStartup = 0
 " Use neocomplete.
