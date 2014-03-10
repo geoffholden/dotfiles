@@ -34,3 +34,6 @@
 [submodule "vim/bundle/neocomplete.vim"]
 	path = vim/bundle/neocomplete.vim
 	url = https://github.com/Shougo/neocomplete.vim.git
+[submodule "vim/bundle/ultisnips"]
+	path = vim/bundle/ultisnips
+	url = https://github.com/SirVer/ultisnips.git
