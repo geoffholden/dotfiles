@@ -65,6 +65,8 @@ set spell
 nmap <silent> <leader>s :set spell!<CR>
 nnoremap <silent> <Leader>b :TagbarToggle<CR>
 nmap <leader>g :tag<space>
+nmap <leader>l :set list!<CR>
+set listchars=tab:▸\ ,eol:¬
 
 highlight ColorColumn ctermbg=234 guibg=#293739
 if exists('+colorcolumn')
