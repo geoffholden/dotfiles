@@ -154,3 +154,6 @@ endif
 set foldmethod=syntax
 set foldnestmax=1
 
+" No folding of commits
+autocmd FileType gitcommit setlocal nofoldenable
+
