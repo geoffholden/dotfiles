@@ -64,7 +64,7 @@ set spelllang=en_ca
 set spell
 nmap <silent> <leader>s :set spell!<CR>
 nnoremap <silent> <Leader>b :TagbarToggle<CR>
-nmap <leader>g :tag 
+nmap <leader>g :tag<space>
 
 highlight ColorColumn ctermbg=234 guibg=#293739
 if exists('+colorcolumn')
