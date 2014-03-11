@@ -64,7 +64,7 @@ set spelllang=en_ca
 set spell
 nmap <silent> <leader>s :set spell!<CR>
 nnoremap <silent> <Leader>b :TagbarToggle<CR>
-nmap <leader>g :tag 
+nmap <leader>g :tag<space>
 
 highlight ColorColumn ctermbg=234 guibg=#293739
 if exists('+colorcolumn')
@@ -146,4 +146,8 @@ let g:airline#extensions#default#section_truncate_width = {
       \ 'y': 120,
       \ 'z': 45,
       \ }
+
+if has('macunix')
+    set guifont=Menlo\ for\ Powerline
+endif
 
