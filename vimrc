@@ -140,3 +140,7 @@ if !exists('g:airline_symbols')
 endif
 let g:airline_symbols.space = "\ua0"
 
+if has('macunix')
+    set guifont=Menlo\ for\ Powerline
+endif
+
