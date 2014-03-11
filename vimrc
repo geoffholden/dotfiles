@@ -6,6 +6,7 @@ filetype off
 " Load pathogen for plugin management
 runtime bundle/vim-pathogen/autoload/pathogen.vim
 execute pathogen#infect()
+Helptags
 
 set noswapfile
 
@@ -158,4 +159,9 @@ set foldnestmax=1
 
 " No folding of commits
 autocmd FileType gitcommit setlocal nofoldenable
+
+if has("autocmd")
+    autocmd BufWritePost .vimrc source $MYVIMRC
+    autocmd BufWritePost vimrc source $MYVIMRC
+endif
 
