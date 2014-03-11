@@ -151,3 +151,6 @@ if has('macunix')
     set guifont=Menlo\ for\ Powerline
 endif
 
+set foldmethod=syntax
+set foldnestmax=1
+
