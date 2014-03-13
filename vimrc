@@ -63,10 +63,8 @@ set laststatus=2
 let mapleader = ","
 set spelllang=en_ca
 set spell
-nmap <silent> <leader>s :set spell!<CR>
 nnoremap <silent> <Leader>b :TagbarToggle<CR>
 nmap <leader>g :tag<space>
-nmap <leader>l :set list!<CR>
 set listchars=tab:▸\ ,eol:¬
 
 highlight ColorColumn ctermbg=234 guibg=#293739
@@ -156,6 +154,9 @@ endif
 
 set foldmethod=syntax
 set foldnestmax=1
+nnoremap [of :set foldenable<CR>
+nnoremap ]of :set nofoldenable<CR>
+nnoremap cof :set <C-R>=eval('&foldenable') ? 'nofoldenable' : 'foldenable'<CR><CR>
 
 " No folding of commits
 autocmd FileType gitcommit setlocal nofoldenable
