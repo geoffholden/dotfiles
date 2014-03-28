@@ -153,7 +153,7 @@ if has('macunix')
 endif
 
 set foldmethod=syntax
-set foldnestmax=1
+set foldnestmax=2
 nnoremap [of :set foldenable<CR>
 nnoremap ]of :set nofoldenable<CR>
 nnoremap cof :set <C-R>=eval('&foldenable') ? 'nofoldenable' : 'foldenable'<CR><CR>
@@ -165,4 +165,14 @@ if has("autocmd")
     autocmd BufWritePost .vimrc source $MYVIMRC
     autocmd BufWritePost vimrc source $MYVIMRC
 endif
+
+" Disable Arrow Keys
+inoremap <Up> <Nop>
+noremap  <Up> <Nop>
+inoremap <Down> <Nop>
+noremap  <Down> <Nop>
+inoremap <Left> <Nop>
+noremap  <Left> <Nop>
+inoremap <Right> <Nop>
+noremap  <Right> <Nop>
 
