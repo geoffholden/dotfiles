@@ -3,7 +3,7 @@
 dir=~/dotfiles
 olddir=~/dotfiles.old
 
-files="vimrc vim gitconfig gitconfig-host gitignore teamocil tmux.conf zsh zshrc ctags git_template"
+files="vimrc vim gitconfig gitconfig-host gitignore teamocil tmux.conf zsh zshrc ctags git_template todo.cfg"
 
 hostname=$(hostname -s)
 

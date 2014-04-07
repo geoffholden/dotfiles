@@ -1,6 +1,6 @@
-PAGER=less
-EDITOR=vim
-HOSTNAME=$(hostname -s)
+export PAGER=less
+export EDITOR=vim
+export HOSTNAME=$(hostname -s)
 
 # Main options
 unsetopt BG_NICE
@@ -94,4 +94,6 @@ alias sz='source ~/.zshrc'
 
 export CLICOLOR=1     
 export LSCOLORS=ExFxBxDxCxegedabagacad
+
+alias td='todo.sh'
 
