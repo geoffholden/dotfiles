@@ -176,3 +176,6 @@ noremap  <Left> <Nop>
 inoremap <Right> <Nop>
 noremap  <Right> <Nop>
 
+" Projects don't get spell checked
+autocmd FileType todo syntax match TodoProject ' +[^[:blank:]]\+' contains=@NoSpell
+
