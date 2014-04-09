@@ -46,3 +46,6 @@
 [submodule "vim/bundle/todo.txt-vim"]
 	path = vim/bundle/todo.txt-vim
 	url = https://github.com/freitass/todo.txt-vim.git
+[submodule "todo.actions.d/view"]
+	path = todo.actions.d/view
+	url = https://github.com/markwu/todo-cli-plugins.git
