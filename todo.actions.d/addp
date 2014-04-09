@@ -1,0 +1,26 @@
+#!/bin/bash
+
+action=$1
+shift
+
+[ "$action" = "usage" ] && {
+  echo "  Add and prioritize:"
+  echo "    addp PRIORITY \"THING I NEED TO DO +project @context\""
+  echo "    addp PRIORITY \"THING I NEED TO DO +project @context\""
+  echo "      add an item and prioritize it in one step"
+  echo ""
+  exit
+}
+
+PRIORITY=false
+if [[ x"$1" = x[a-zA-Z] ]]; then
+    PRIORITY=$1
+    shift
+fi
+
+# call back to the main script to add
+if "$TODO_SH" command add "$@"; then
+    # figure out the line of what we just added, and "do" it
+    line=`sed -n '$ =' "$TODO_FILE"`
+    [ $PRIORITY != false ] && "$TODO_SH" command pri "$line" $PRIORITY
+fi
