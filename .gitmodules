@@ -49,3 +49,6 @@
 [submodule "todo.actions.d/view"]
 	path = todo.actions.d/view
 	url = https://github.com/markwu/todo-cli-plugins.git
+[submodule "todo.actions.d/make"]
+	path = todo.actions.d/make
+	url = https://github.com/Jmeyering/TodoTxtMake.git
