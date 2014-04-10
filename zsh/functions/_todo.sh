@@ -124,7 +124,8 @@ esac
 
 case $nextstate in
   (file)
-  _path_files -W ~/.todo
+  source ${HOME}/.todo.cfg
+  _path_files -W ${TODO_DIR}
   ;;
 
   (item)
