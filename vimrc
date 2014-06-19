@@ -16,6 +16,10 @@ filetype plugin indent on
 
 " In makefiles do not expand tabs
 autocmd FileType make setlocal noexpandtab
+
+" Ruby uses 2-character indents
+autocmd FileType ruby setlocal ts=2 sts=2 sw=2
+
 " omnicompletion (^X,^O)
 set ofu=syntaxcomplete#Complete
 
