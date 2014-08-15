@@ -12,11 +12,11 @@
     path = .gitconfig-host
 
 [push]
-	default = current
+    default = current
 [init]
-	templatedir = ~/.git_template
+    templatedir = ~/.git_template
 [alias]
-	ctags = !.git/hooks/ctags
+    ctags = !.git/hooks/ctags
     co = checkout
     ec = config --global -e
     up = !git pull --rebase --prune $@ && git submodule update --init --recursive
