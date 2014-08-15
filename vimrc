@@ -66,7 +66,7 @@ set laststatus=2
 
 let mapleader = ","
 set spelllang=en_ca
-set spell
+set nospell
 nnoremap <silent> <Leader>b :TagbarToggle<CR>
 nmap <leader>g :tag<space>
 set listchars=tab:▸\ ,eol:¬
@@ -158,6 +158,7 @@ endif
 
 set foldmethod=syntax
 set foldnestmax=2
+set nofoldenable
 nnoremap [of :set foldenable<CR>
 nnoremap ]of :set nofoldenable<CR>
 nnoremap cof :set <C-R>=eval('&foldenable') ? 'nofoldenable' : 'foldenable'<CR><CR>
