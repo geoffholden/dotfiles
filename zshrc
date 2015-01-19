@@ -97,3 +97,6 @@ export LSCOLORS=ExFxBxDxCxegedabagacad
 
 alias td='todo.sh'
 
+export GOPATH="${HOME}/go"
+export PATH=${PATH}:${GOPATH//://bin:}/bin
+
