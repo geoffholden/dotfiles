@@ -69,6 +69,8 @@ set spelllang=en_ca
 set nospell
 nnoremap <silent> <Leader>b :TagbarToggle<CR>
 nmap <leader>g :tag<space>
+map <silent> <C-n> :NERDTreeToggle<CR>
+
 set listchars=tab:▸\ ,eol:¬
 
 highlight ColorColumn ctermbg=234 guibg=#293739
