@@ -1,11 +1,9 @@
-session:
-    name: "dev"
-    windows:
-      - name: "Development"
-        clear: true
-        layout: "dc5b,222x63,0,0[222x46,0,0{151x46,0,0,2,70x46,152,0,16},222x16,0,47,15]"
-        panes:
-          - cmd:
-          - cmd:
-          - cmd:
+name: "dev"
+windows:
+  - name: "Development"
+    layout: "dc5b,222x63,0,0[222x46,0,0{151x46,0,0,2,70x46,152,0,16},222x16,0,47,15]"
+    panes:
+      - commands:
+      - commands:
+      - commands:
 

@@ -1,16 +1,13 @@
-session:
-    name: "work"
-    windows:
-      - name: "Email"
-        clear: true
-        panes:
-          - cmd: "alpine"
-      - name: "Arduino"
-        root: "~/src/arduino/sketchbook"
-        clear: true
-        layout: "dc5b,222x63,0,0[222x46,0,0{151x46,0,0,2,70x46,152,0,16},222x16,0,47,15]"
-        panes:
-          - cmd:
-          - cmd: "vim libraries/Seaformatics/seaformatics.h"
-          - cmd:
+name: "work"
+windows:
+  - name: "Email"
+    panes:
+      - commands: "alpine"
+  - name: "Arduino"
+    root: "~/src/electronics/sketchbook"
+    layout: "dc5b,222x63,0,0[222x46,0,0{151x46,0,0,2,70x46,152,0,16},222x16,0,47,15]"
+    panes:
+      - commands:
+      - commands: "vim libraries/Seaformatics/seaformatics.h"
+      - commands:
 
