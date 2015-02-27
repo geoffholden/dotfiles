@@ -8,7 +8,7 @@ task :install do
     file[%r{(^|/)host-specific/}]
   end
 
-  linkables.concat Dir.glob("**/host-specific/#{hostname}/**")
+  linkables.concat Dir.glob("**/host-specific/#{hostname}/**/*{.symlink}")
 
   skip_all = false
   overwrite_all = false
@@ -46,7 +46,7 @@ task :uninstall do
     file[%r{(^|/)host-specific/}]
   end
 
-  linkables.concat Dir.glob("**/host-specific/#{hostname}/**")
+  linkables.concat Dir.glob("**/host-specific/#{hostname}/**/*{.symlink}")
 
   linkables.each do |linkable|
     file = linkable.split('/').last.split('.symlink').last.tr('@', '/')
