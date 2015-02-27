@@ -1,0 +1,30 @@
+export ZSH=$(dirname $(readlink ${HOME}/.zshrc))
+export DOTFILES=$(readlink -f ${ZSH}/../)
+
+typeset -U config_files
+config_files=($DOTFILES/**/*.zsh)
+
+# load path files
+for file in ${(M)config_files:#*/path.zsh}; do
+    source $file
+done
+
+# load everythign but path & completion files
+for file in ${${config_files:#*/path.zsh}:#/completion.zsh}; do
+    source $file
+done
+
+# initialize autocomplete
+autoload -U compinit
+compinit
+
+# load completion
+for file in ${(M)config_files:#*/completion.zsh}; do
+    source $file
+done
+
+unset config_files
+
+autoload -U compinit
+compinit -i
+
