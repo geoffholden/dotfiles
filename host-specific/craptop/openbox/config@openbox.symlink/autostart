@@ -1,0 +1,16 @@
+if [ -f ~/.Xresources ]; then 
+    xrdb -merge ~/.Xresources
+fi
+
+if [ -f ~/.xmodmaprc ]; then
+    xmodmap ~/.xmodmaprc
+fi
+
+xscreensaver -no-splash &
+
+eval $(ssh-agent)
+SSH_ASKPASS=$(which ssh-askpass)
+ssh-add
+
+uxterm -fullscreen -e tmux &
+
