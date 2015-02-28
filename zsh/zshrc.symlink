@@ -1,5 +1,16 @@
 export ZSH=$(dirname $(readlink ${HOME}/.zshrc))
-export DOTFILES=$(readlink -f ${ZSH}/../)
+
+if [[ $(uname -s) == "Darwin" ]]; then
+    if [[ $commands[greadlinks] ]]; then
+        alias readlink=greadlink
+    else
+        export DOTFILES=${ZSH}/../
+    fi
+fi
+
+if [[ -z $DOTFILES ]]; then
+    export DOTFILES=$(readlink -f ${ZSH}/../)
+fi
 
 typeset -U config_files
 config_files=($DOTFILES/**/*.zsh)
