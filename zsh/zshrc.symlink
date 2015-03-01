@@ -1,7 +1,7 @@
 export ZSH=$(dirname $(readlink ${HOME}/.zshrc))
 
 if [[ $(uname -s) == "Darwin" ]]; then
-    if [[ $commands[greadlinks] ]]; then
+    if (( $+commands[greadlink] )); then
         alias readlink=greadlink
     else
         export DOTFILES=${ZSH}/../
