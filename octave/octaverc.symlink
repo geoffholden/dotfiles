@@ -1,0 +1,6 @@
+if strcmp(uname().nodename, 'craptop')
+  graphics_toolkit('gnuplot');
+end
+
+addpath([getenv("DOTFILES") "/octave/functions"])
+
