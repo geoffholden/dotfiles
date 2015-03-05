@@ -12,6 +12,8 @@ if [[ -z $DOTFILES ]]; then
     export DOTFILES=$(readlink -f ${ZSH}/../)
 fi
 
+export PROJECTS=${HOME}/src
+
 typeset -U config_files
 config_files=($DOTFILES/**/*.zsh)
 
