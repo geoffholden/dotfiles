@@ -15,7 +15,7 @@ function [binned_x, binned_y] = bindata (x, y = NaN, fun = @mean)
         [binned_x, binned_y] = bindata(x(:,1),x(:,[2:end]), fun);
         return
     end
-    if (nargin == 2 && strcmp(typeinfo(y), "function handle"))
+    if (nargin == 2 && strcmp(typeinfo(y), 'function handle'))
         [binned_x, binned_y] = bindata(x(:,1),x(:,[2:end]), y);
         return
     end
