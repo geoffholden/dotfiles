@@ -186,3 +186,21 @@ noremap  <Right> <Nop>
 " Projects don't get spell checked
 autocmd FileType todo syntax match TodoProject ' +[^[:blank:]]\+' contains=@NoSpell
 
+" Transfer default register to/from tmux paste buffer
+function! RegisterToTmux ()
+    let fname=tempname()
+    exec 'redir > '.fname
+    echo @"
+    redir END
+    exec 'silent !tmux load-buffer '.fname
+    exec 'silent !rm '.fname
+    echo ""
+endfunction
+function! TmuxToRegister ()
+    redir @">
+    echo system('tmux save-buffer -')
+    redir END
+endfunction
+map <Leader>ty :silent call RegisterToTmux()<CR>:redraw!<CR>
+map <Leader>tp :silent call TmuxToRegister()<CR>
+
