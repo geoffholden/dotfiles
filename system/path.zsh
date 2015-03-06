@@ -1,2 +1,2 @@
-export PATH=${PATH}:${DOTFILES}/bin
+path+=(${DOTFILES}/bin)
 
