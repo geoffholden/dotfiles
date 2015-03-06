@@ -1,3 +1,3 @@
 export GOPATH="${PROJECTS}/go"
-path=(${GOPATH} "$path[@]")
+path=(${GOPATH}/bin "$path[@]")
 
