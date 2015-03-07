@@ -188,19 +188,11 @@ autocmd FileType todo syntax match TodoProject ' +[^[:blank:]]\+' contains=@NoSp
 
 " Transfer default register to/from tmux paste buffer
 function! RegisterToTmux ()
-    let fname=tempname()
-    exec 'redir > '.fname
-    echo @"
-    redir END
-    exec 'silent !tmux load-buffer '.fname
-    exec 'silent !rm '.fname
-    echo ""
+    call system('tmux load-buffer -', getreg())
 endfunction
 function! TmuxToRegister ()
-    redir @">
-    echo system('tmux save-buffer -')
-    redir END
+    call setreg(v:register, system('tmux save-buffer -'))
 endfunction
-map <Leader>ty :silent call RegisterToTmux()<CR>:redraw!<CR>
-map <Leader>tp :silent call TmuxToRegister()<CR>
+map <silent> <Leader>tp :call RegisterToTmux()<CR>
+map <silent> <Leader>tg :call TmuxToRegister()<CR>
 
