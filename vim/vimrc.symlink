@@ -196,3 +196,5 @@ endfunction
 map <silent> <Leader>tp :call RegisterToTmux()<CR>
 map <silent> <Leader>tg :call TmuxToRegister()<CR>
 
+let g:VimuxUseNearest = 0
+
