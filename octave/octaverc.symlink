@@ -1,6 +1,12 @@
+% fltk doesn't work on the old laptop for some reason,
+% so we'll use gnuplot there.
 if strcmp(uname().nodename, 'craptop')
   graphics_toolkit('gnuplot');
 end
 
+% Add my library of functions
 addpath([getenv("DOTFILES") "/octave/functions"])
+
+% I don't want core files.
+crash_dumps_octave_core(0);
 
