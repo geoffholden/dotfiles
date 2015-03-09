@@ -1,5 +1,6 @@
 if [[ $(uname -s) == "Linux" ]]; then
-    alias db='dropbox.py'
+    alias dropbox='dropbox.py'
+    alias db='dropbox'
     alias dbls='db \ls'
 fi
 
