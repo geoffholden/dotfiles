@@ -1,0 +1,8 @@
+# Take input from stdin and load it into the tmux buffer.
+# Example usage:
+# % pwd | tmb
+# (in another window/pane): % cd ^A]
+local data
+data=$(cat -)
+echo -n ${data} | tmux load-buffer -
+
