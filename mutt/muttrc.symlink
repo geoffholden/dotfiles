@@ -1,0 +1,16 @@
+set realname = 'Geoff Holden'
+set from = 'geoff.holden@mun.ca'
+set use_from = yes
+set imap_user=gholden
+set folder=imaps://mail.mun.ca/
+set spoolfile = +INBOX
+set imap_check_subscribed
+set postponed = +Drafts
+unset imap_passive
+set imap_keepalive = 300
+set mail_check = 120
+set smtp_url = smtp://smtp.mun.ca
+set ssl_min_dh_prime_bits = 512
+
+source "gpg -d $DOTFILES/mutt/passwords.gpg |"
+
