@@ -1,0 +1,3 @@
+#compdef dbc
+_files -W ${HOME}/Dropbox -/
+
