@@ -3,6 +3,9 @@ set nocompatible
 
 filetype off
 
+" Clear autocmd
+autocmd!
+
 " Load pathogen for plugin management
 runtime bundle/vim-pathogen/autoload/pathogen.vim
 execute pathogen#infect()
@@ -47,6 +50,9 @@ autocmd BufRead,BufNewFile *.pde,*.ino setlocal ts=2 sts=2 sw=2
 
 " .octaverc is a matlab file
 autocmd BufRead,BufNewFile .octaverc,octaverc.symlink set filetype=matlab
+
+" zsh functions are zsh, even without extensions
+autocmd BufRead,BufNewFile **/*zsh/functions/* set filetype=zsh
 
 " Vim UI
 set number
