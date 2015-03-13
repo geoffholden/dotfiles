@@ -58,3 +58,6 @@
 [submodule "vim/vim.symlink/bundle/vimux"]
 	path = vim/vim.symlink/bundle/vimux
 	url = https://github.com/benmills/vimux.git
+[submodule "vim/vim.symlink/bundle/tabular"]
+	path = vim/vim.symlink/bundle/tabular
+	url = https://github.com/godlygeek/tabular.git
