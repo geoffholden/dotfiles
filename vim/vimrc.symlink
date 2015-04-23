@@ -23,6 +23,9 @@ autocmd FileType make setlocal noexpandtab
 " Ruby uses 2-character indents
 autocmd FileType ruby setlocal ts=2 sts=2 sw=2
 
+" Defaults for Go
+autocmd FileType go setlocal ts=8 sts=8 sw=8 noet
+
 " omnicompletion (^X,^O)
 set ofu=syntaxcomplete#Complete
 
