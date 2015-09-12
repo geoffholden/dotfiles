@@ -57,6 +57,9 @@ autocmd BufRead,BufNewFile .octaverc,octaverc.symlink set filetype=matlab
 " zsh functions are zsh, even without extensions
 autocmd BufRead,BufNewFile **/*zsh/functions/* set filetype=zsh
 
+" *.md files should be treated as Markdown
+autocmd BufRead,BufNewFile *.md setfiletype markdown
+
 " Vim UI
 set number
 set nohlsearch
