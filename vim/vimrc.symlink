@@ -232,3 +232,7 @@ vmap <Leader>a,, :Tabularize /,\zs<CR>
 nmap <Leader>a<Bar> :Tabularize /<Bar><CR>
 vmap <Leader>a<Bar> :Tabularize /<Bar><CR>
 
+" markdownfmt
+let g:markdownfmt_command = 'mdfmt'
+let g:markdownfmt_autosave = 1
+
