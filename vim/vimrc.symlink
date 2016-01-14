@@ -37,31 +37,6 @@ colorscheme molokai
 
 syntax enable
 
-" JSON
-autocmd BufRead,BufNewFile *.json setfiletype json
-autocmd Syntax json sou ~/.vim/syntax/json.vim
-
-" Protocol Buffers
-autocmd BufRead,BufNewFile *.proto setfiletype proto
-autocmd Syntax proto sou ~/.vim/syntax/proto.vim
-
-" Arduino keywords.txt
-autocmd BufRead,BufNewFile keywords.txt setlocal ft=keywords
-autocmd FileType keywords setlocal noexpandtab
-
-" Arduino Sketches
-autocmd BufRead,BufNewFile *.pde,*.ino set filetype=cpp
-autocmd BufRead,BufNewFile *.pde,*.ino setlocal ts=2 sts=2 sw=2
-
-" .octaverc is a matlab file
-autocmd BufRead,BufNewFile .octaverc,octaverc.symlink set filetype=matlab
-
-" zsh functions are zsh, even without extensions
-autocmd BufRead,BufNewFile **/*zsh/functions/* set filetype=zsh
-
-" *.md files should be treated as Markdown
-autocmd FileType markdown setlocal linebreak
-
 " Vim UI
 set number
 set nohlsearch
@@ -182,9 +157,6 @@ nnoremap [of :set foldenable<CR>
 nnoremap ]of :set nofoldenable<CR>
 nnoremap cof :set <C-R>=eval('&foldenable') ? 'nofoldenable' : 'foldenable'<CR><CR>
 
-" No folding of commits
-autocmd FileType gitcommit setlocal nofoldenable
-
 if has("autocmd")
     autocmd BufWritePost .vimrc source $MYVIMRC
     autocmd BufWritePost vimrc source $MYVIMRC
@@ -200,9 +172,6 @@ inoremap <Left> <Nop>
 noremap  <Left> <Nop>
 inoremap <Right> <Nop>
 noremap  <Right> <Nop>
-
-" Projects don't get spell checked
-autocmd FileType todo syntax match TodoProject ' +[^[:blank:]]\+' contains=@NoSpell
 
 " Transfer default register to/from tmux paste buffer
 function! RegisterToTmux ()
