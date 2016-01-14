@@ -60,7 +60,7 @@ autocmd BufRead,BufNewFile .octaverc,octaverc.symlink set filetype=matlab
 autocmd BufRead,BufNewFile **/*zsh/functions/* set filetype=zsh
 
 " *.md files should be treated as Markdown
-autocmd BufRead,BufNewFile *.md set filetype=markdown
+autocmd FileType markdown setlocal linebreak
 
 " Vim UI
 set number
