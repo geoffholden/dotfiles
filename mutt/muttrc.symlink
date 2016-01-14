@@ -11,6 +11,8 @@ set imap_keepalive = 300
 set mail_check = 120
 set smtp_url = smtp://smtp.mun.ca
 set ssl_min_dh_prime_bits = 512
+set record="=Sent"
+set postponed="=Drafts"
 
-source "gpg -d $DOTFILES/mutt/passwords.gpg |"
+source "gpg -d $DOTFILES/mutt/encrypted.gpg |"
 
