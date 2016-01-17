@@ -9,6 +9,7 @@ fi
 if [ ! -z $ANDROID_HOME ]; then
     path+=(${ANDROID_HOME}/tools)
     path+=(${ANDROID_HOME}/platform-tools)
+    path+=(${ANDROID_HOME}/tools/proguard/bin)
 fi
 
 
