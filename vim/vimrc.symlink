@@ -207,3 +207,5 @@ vmap <Leader>a<Bar> :Tabularize /<Bar><CR>
 let g:markdownfmt_command = 'mdfmt'
 let g:markdownfmt_autosave = 1
 
+let g:markdown_fenced_languages = ['cpp', 'go', 'ditaa', 'dot', 'plantuml']
+

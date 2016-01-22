@@ -73,3 +73,9 @@
 [submodule "vim/vim.symlink/bundle/vim-markdown"]
 	path = vim/vim.symlink/bundle/vim-markdown
 	url = https://github.com/tpope/vim-markdown
+[submodule "vim/vim.symlink/bundle/vim-ditaa"]
+	path = vim/vim.symlink/bundle/vim-ditaa
+	url = https://github.com/vim-scripts/ditaa
+[submodule "vim/vim.symlink/bundle/plantuml-syntax"]
+	path = vim/vim.symlink/bundle/plantuml-syntax
+	url = https://github.com/aklt/plantuml-syntax
