@@ -1,3 +1,4 @@
 #compdef c
+_files -W $GOPATH/src/github.com/geoffholden -/
 _files -W $PROJECTS -/
 
