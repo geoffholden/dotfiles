@@ -1,68 +1,37 @@
-" General Option
+" General Options {{{
 set nocompatible
 scriptencoding utf-8
 set encoding=utf-8
 
 filetype off
-
-" Clear autocmd
+" }}}
+" Pathogen {{{
 autocmd!
 
-" Load pathogen for plugin management
+" Load pathogen
 runtime bundle/vim-pathogen/autoload/pathogen.vim
 execute pathogen#infect()
 Helptags
-
-set noswapfile
-
-" Events
-filetype on
-filetype plugin indent on
-
-" In makefiles do not expand tabs
-autocmd FileType make setlocal noexpandtab
-
-" Ruby uses 2-character indents
-autocmd FileType ruby setlocal ts=2 sts=2 sw=2
-
-" Defaults for Go
-autocmd FileType go setlocal ts=4 sts=4 sw=4 noet
-
-" omnicompletion (^X,^O)
-set ofu=syntaxcomplete#Complete
-
-" Theme
+" }}}
+" Theme {{{
 set t_Co=256
 colorscheme molokai
 
 syntax enable
-
-" Vim UI
+" }}}
+" Vim UI {{{
+set noswapfile
 set number
 set nohlsearch
 set incsearch
 set ruler
 set scrolloff=4
 set cursorline
-
-" Text Formatting
-set autoindent
-set tabstop=4
-set softtabstop=4
-set shiftwidth=4
-set shiftround
-set expandtab
-
 set statusline=%F%m%r%h%w\ %{fugitive#statusline()}\ [%l,%c]\ [%L,%p%%]
 set laststatus=2
-
 let mapleader = ","
 set spelllang=en_ca
 set nospell
-nnoremap <silent> <Leader>b :TagbarToggle<CR>
-nmap <leader>g :tag<space>
-map <silent> <C-n> :NERDTreeToggle<CR>
-
 set listchars=tab:▸\ ,eol:¬
 
 highlight ColorColumn ctermbg=234 guibg=#293739
@@ -70,12 +39,31 @@ if exists('+colorcolumn')
     set colorcolumn=80
 endif
 
+nnoremap <silent> <Leader>b :TagbarToggle<CR>
+nmap <leader>g :tag<space>
+map <silent> <C-n> :NERDTreeToggle<CR>
+" }}}
+" Text Formatting {{{
+filetype on
+filetype plugin indent on
+set autoindent
+set tabstop=4
+set softtabstop=4
+set shiftwidth=4
+set shiftround
+set expandtab
+" }}}
+" StripWhitespace {{{
 function! StripWhitespace ()
     exec ':%s/ \+$//gc'
 endfunction
 map ,w :call StripWhitespace ()<CR>
+" }}}
+" neocomplete {{{
+"
+" omnicompletion (^X,^O)
+set ofu=syntaxcomplete#Complete
 
-" neocomplete
 let g:acp_enableAtStartup = 0
 " Use neocomplete.
 let g:neocomplete#enable_at_startup = 1
@@ -128,11 +116,13 @@ autocmd FileType xml setlocal omnifunc=xmlcomplete#CompleteTags
 if !exists('g:neocomplete#sources#omni#input_patterns')
     let g:neocomplete#sources#omni#input_patterns = {}
 endif
-
+" }}}
+" UltiSnips {{{
 let g:UltiSnipsExpandTrigger="<S-tab>"
 let g:UltiSnipsJumpForwardTrigger="<c-b>"
 let g:UltiSnipsJumpBackwardTrigger="<c-z>"
-
+" }}}
+" Airline {{{
 let g:airline_powerline_fonts = 1
 if !exists('g:airline_symbols')
   let g:airline_symbols = {}
@@ -145,25 +135,28 @@ let g:airline#extensions#default#section_truncate_width = {
       \ 'y': 120,
       \ 'z': 45,
       \ }
-
+" }}}
+" MacVim {{{
 if has('macunix')
     set guifont=Menlo\ for\ Powerline
 endif
-
+" }}}
+" Folding {{{
 set foldmethod=syntax
 set foldnestmax=2
 set nofoldenable
 nnoremap [of :set foldenable<CR>
 nnoremap ]of :set nofoldenable<CR>
 nnoremap cof :set <C-R>=eval('&foldenable') ? 'nofoldenable' : 'foldenable'<CR><CR>
-
+" }}}
+" vimrc auto-reload {{{
 if has("autocmd")
     autocmd BufWritePost .vimrc source $MYVIMRC
     autocmd BufWritePost vimrc source $MYVIMRC
     autocmd BufWritePost vimrc.symlink source $MYVIMRC
 endif
-
-" Disable Arrow Keys
+" }}}
+" Disable Arrow Keys {{{
 inoremap <Up> <Nop>
 noremap  <Up> <Nop>
 inoremap <Down> <Nop>
@@ -172,7 +165,8 @@ inoremap <Left> <Nop>
 noremap  <Left> <Nop>
 inoremap <Right> <Nop>
 noremap  <Right> <Nop>
-
+" }}}
+" Tmux {{{
 " Transfer default register to/from tmux paste buffer
 function! RegisterToTmux ()
     call system('tmux load-buffer -', getreg())
@@ -184,8 +178,8 @@ map <silent> <Leader>tp :call RegisterToTmux()<CR>
 map <silent> <Leader>tg :call TmuxToRegister()<CR>
 
 let g:VimuxUseNearest = 0
-
-" Tabular mappings
+" }}}
+" Tabular mappings {{{
 nmap <Leader>a& :Tabularize /&<CR>
 vmap <Leader>a& :Tabularize /&<CR>
 nmap <Leader>a= :Tabularize /=<CR>
@@ -202,10 +196,10 @@ nmap <Leader>a,, :Tabularize /,\zs<CR>
 vmap <Leader>a,, :Tabularize /,\zs<CR>
 nmap <Leader>a<Bar> :Tabularize /<Bar><CR>
 vmap <Leader>a<Bar> :Tabularize /<Bar><CR>
-
-" markdownfmt
+" }}}
+" markdownfmt {{{
 let g:markdownfmt_command = 'mdfmt'
 let g:markdownfmt_autosave = 1
-
 let g:markdown_fenced_languages = ['cpp', 'go', 'ditaa', 'dot', 'plantuml']
-
+" }}}
+" vim:foldmethod=marker:foldlevel=0:foldenable
