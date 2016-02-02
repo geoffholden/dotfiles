@@ -4,14 +4,32 @@ scriptencoding utf-8
 set encoding=utf-8
 
 filetype off
-" }}}
-" Pathogen {{{
 autocmd!
-
-" Load pathogen
-runtime bundle/vim-pathogen/autoload/pathogen.vim
-execute pathogen#infect()
-Helptags
+" }}}
+" Plugins {{{
+call plug#begin('~/.vim/plugged')
+Plug 'kien/ctrlp.vim'
+Plug 'Shougo/neocomplete.vim'
+Plug 'tpope/vim-commentary'
+Plug 'vim-scripts/OmniCppComplete'
+Plug 'godlygeek/tabular'
+Plug 'majutsushi/tagbar'
+Plug 'SirVer/ultisnips' | Plug 'honza/vim-snippets'
+Plug 'vim-airline/vim-airline' | Plug 'vim-airline/vim-airline-themes'
+Plug 'tpope/vim-dispatch'
+Plug 'tpope/vim-fugitive'
+Plug 'airblade/vim-gitgutter'
+Plug 'fatih/vim-go', { 'for': 'go' }
+Plug 'moorereason/vim-markdownfmt', { 'for': 'markdown' }
+Plug 'tpope/vim-unimpaired'
+Plug 'benmills/vimux'
+" Syntax Only
+Plug 'aklt/plantuml-syntax'
+Plug 'freitass/todo.txt-vim'
+Plug 'vim-scripts/ditaa'
+Plug 'tpope/vim-markdown', { 'for': 'markdown' }
+Plug 'tpope/vim-git'
+call plug#end()
 " }}}
 " Theme {{{
 set t_Co=256
@@ -42,6 +60,9 @@ endif
 nnoremap <silent> <Leader>b :TagbarToggle<CR>
 nmap <leader>g :tag<space>
 map <silent> <C-n> :NERDTreeToggle<CR>
+
+nnoremap <silent> <Leader>c<Space> :Commentary<CR>
+vnoremap <silent> <Leader>c<Space> :Commentary<CR>
 " }}}
 " Text Formatting {{{
 filetype on
