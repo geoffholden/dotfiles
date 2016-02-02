@@ -1,9 +1,3 @@
-[submodule "vim/bundle/vim-snipmate"]
-	path = vim/bundle/vim-snipmate
-	url = https://github.com/garbas/vim-snipmate.git
-[submodule "vim/bundle/vim-arduino-snippets"]
-	path = vim/bundle/vim-arduino-snippets
-	url = https://github.com/sudar/vim-arduino-snippets
 [submodule "todo.txt/todo.actions.d/view"]
 	path = todo.txt/todo.actions.d/view
 	url = https://github.com/markwu/todo-cli-plugins.git

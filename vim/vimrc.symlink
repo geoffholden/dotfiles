@@ -23,6 +23,7 @@ Plug 'fatih/vim-go', { 'for': 'go' }
 Plug 'moorereason/vim-markdownfmt', { 'for': 'markdown' }
 Plug 'tpope/vim-unimpaired'
 Plug 'benmills/vimux'
+Plug 'ConradIrwin/vim-bracketed-paste'
 " Syntax Only
 Plug 'aklt/plantuml-syntax'
 Plug 'freitass/todo.txt-vim'
