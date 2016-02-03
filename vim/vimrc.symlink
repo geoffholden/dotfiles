@@ -144,6 +144,9 @@ let g:UltiSnipsExpandTrigger="<S-tab>"
 let g:UltiSnipsJumpForwardTrigger="<c-b>"
 let g:UltiSnipsJumpBackwardTrigger="<c-z>"
 " }}}
+" CtrlP {{{
+let g:ctrlp_extensions = ['tag', 'buffertag', 'mixed']
+" }}}
 " Airline {{{
 let g:airline_powerline_fonts = 1
 if !exists('g:airline_symbols')
