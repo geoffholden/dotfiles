@@ -24,6 +24,7 @@ Plug 'moorereason/vim-markdownfmt', { 'for': 'markdown' }
 Plug 'tpope/vim-unimpaired'
 Plug 'benmills/vimux'
 Plug 'ConradIrwin/vim-bracketed-paste'
+Plug 'scrooloose/syntastic'
 " Syntax Only
 Plug 'aklt/plantuml-syntax'
 Plug 'freitass/todo.txt-vim'
