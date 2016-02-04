@@ -3,18 +3,17 @@ set nocompatible
 scriptencoding utf-8
 set encoding=utf-8
 
+set dictionary=/usr/share/dict/words
 filetype off
 autocmd!
 " }}}
 " Plugins {{{
 call plug#begin('~/.vim/plugged')
 Plug 'kien/ctrlp.vim'
-Plug 'Shougo/neocomplete.vim'
+Plug 'ajh17/VimCompletesMe'
 Plug 'tpope/vim-commentary'
 Plug 'vim-scripts/OmniCppComplete'
-Plug 'godlygeek/tabular'
 Plug 'majutsushi/tagbar'
-Plug 'SirVer/ultisnips' | Plug 'honza/vim-snippets'
 Plug 'vim-airline/vim-airline' | Plug 'vim-airline/vim-airline-themes'
 Plug 'tpope/vim-dispatch'
 Plug 'tpope/vim-fugitive'
@@ -25,6 +24,8 @@ Plug 'tpope/vim-unimpaired'
 Plug 'benmills/vimux'
 Plug 'ConradIrwin/vim-bracketed-paste'
 Plug 'scrooloose/syntastic'
+Plug 'spiiph/vim-space'
+Plug 'junegunn/vim-easy-align'
 " Syntax Only
 Plug 'aklt/plantuml-syntax'
 Plug 'freitass/todo.txt-vim'
@@ -82,68 +83,15 @@ function! StripWhitespace ()
 endfunction
 map ,w :call StripWhitespace ()<CR>
 " }}}
-" neocomplete {{{
-"
-" omnicompletion (^X,^O)
-set ofu=syntaxcomplete#Complete
-
-let g:acp_enableAtStartup = 0
-" Use neocomplete.
-let g:neocomplete#enable_at_startup = 1
-" Use smartcase.
-let g:neocomplete#enable_smart_case = 1
-" Set minimum syntax keyword length.
-let g:neocomplete#sources#syntax#min_keyword_length = 3
-let g:neocomplete#lock_buffer_name_pattern = '\*ku\*'
-
-" Define dictionary.
-let g:neocomplete#sources#dictionary#dictionaries = {
-    \ 'default' : '',
-    \ 'vimshell' : $HOME.'/.vimshell_hist',
-    \ 'scheme' : $HOME.'/.gosh_completions'
-        \ }
-
-" Define keyword.
-if !exists('g:neocomplete#keyword_patterns')
-    let g:neocomplete#keyword_patterns = {}
-endif
-let g:neocomplete#keyword_patterns['default'] = '\h\w*'
-
-" Plugin key-mappings.
-inoremap <expr><C-g>     neocomplete#undo_completion()
-inoremap <expr><C-l>     neocomplete#complete_common_string()
-
-" Recommended key-mappings.
-" <CR>: close popup and save indent.
-inoremap <silent> <CR> <C-r>=<SID>my_cr_function()<CR>
-function! s:my_cr_function()
-  "return neocomplete#close_popup() . "\<CR>"
-  " For no inserting <CR> key.
-  return pumvisible() ? neocomplete#close_popup() : "\<CR>"
-endfunction
-" <TAB>: completion.
-inoremap <expr><TAB>  pumvisible() ? "\<C-n>" : "\<TAB>"
-" <C-h>, <BS>: close popup and delete backword char.
-inoremap <expr><C-h> neocomplete#smart_close_popup()."\<C-h>"
-inoremap <expr><BS> neocomplete#smart_close_popup()."\<C-h>"
-inoremap <expr><C-y>  neocomplete#close_popup()
-inoremap <expr><C-e>  neocomplete#cancel_popup()
-
-autocmd FileType css setlocal omnifunc=csscomplete#CompleteCSS
-autocmd FileType html,markdown setlocal omnifunc=htmlcomplete#CompleteTags
-autocmd FileType javascript setlocal omnifunc=javascriptcomplete#CompleteJS
-autocmd FileType python setlocal omnifunc=pythoncomplete#Complete
-autocmd FileType xml setlocal omnifunc=xmlcomplete#CompleteTags
-
-" Enable heavy omni completion.
-if !exists('g:neocomplete#sources#omni#input_patterns')
-    let g:neocomplete#sources#omni#input_patterns = {}
-endif
+" VimCompletesMe {{{
+autocmd FileType text,markdown let b:vcm_tab_complete = 'dict'
 " }}}
-" UltiSnips {{{
-let g:UltiSnipsExpandTrigger="<S-tab>"
-let g:UltiSnipsJumpForwardTrigger="<c-b>"
-let g:UltiSnipsJumpBackwardTrigger="<c-z>"
+" easy-align {{{
+" Start interactive EasyAlign in visual mode (e.g. vipga)
+xmap ga <Plug>(EasyAlign)
+
+" Start interactive EasyAlign for a motion/text object (e.g. gaip)
+nmap ga <Plug>(EasyAlign)
 " }}}
 " CtrlP {{{
 let g:ctrlp_extensions = ['tag', 'buffertag', 'mixed']
@@ -177,9 +125,9 @@ nnoremap cof :set <C-R>=eval('&foldenable') ? 'nofoldenable' : 'foldenable'<CR><
 " }}}
 " vimrc auto-reload {{{
 if has("autocmd")
-    autocmd BufWritePost .vimrc source $MYVIMRC
-    autocmd BufWritePost vimrc source $MYVIMRC
-    autocmd BufWritePost vimrc.symlink source $MYVIMRC
+    autocmd BufWritePost .vimrc source $MYVIMRC        | doautocmd BufRead
+    autocmd BufWritePost vimrc source $MYVIMRC         | doautocmd BufRead
+    autocmd BufWritePost vimrc.symlink source $MYVIMRC | doautocmd BufRead
 endif
 " }}}
 " Disable Arrow Keys {{{
@@ -204,24 +152,6 @@ map <silent> <Leader>tp :call RegisterToTmux()<CR>
 map <silent> <Leader>tg :call TmuxToRegister()<CR>
 
 let g:VimuxUseNearest = 0
-" }}}
-" Tabular mappings {{{
-nmap <Leader>a& :Tabularize /&<CR>
-vmap <Leader>a& :Tabularize /&<CR>
-nmap <Leader>a= :Tabularize /=<CR>
-vmap <Leader>a= :Tabularize /=<CR>
-nmap <Leader>a=> :Tabularize /=><CR>
-vmap <Leader>a=> :Tabularize /=><CR>
-nmap <Leader>a: :Tabularize /:<CR>
-vmap <Leader>a: :Tabularize /:<CR>
-nmap <Leader>a:: :Tabularize /:\zs<CR>
-vmap <Leader>a:: :Tabularize /:\zs<CR>
-nmap <Leader>a, :Tabularize /,<CR>
-vmap <Leader>a, :Tabularize /,<CR>
-nmap <Leader>a,, :Tabularize /,\zs<CR>
-vmap <Leader>a,, :Tabularize /,\zs<CR>
-nmap <Leader>a<Bar> :Tabularize /<Bar><CR>
-vmap <Leader>a<Bar> :Tabularize /<Bar><CR>
 " }}}
 " markdownfmt {{{
 let g:markdownfmt_command = 'mdfmt'
