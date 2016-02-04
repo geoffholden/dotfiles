@@ -124,9 +124,9 @@ nnoremap cof :set <C-R>=eval('&foldenable') ? 'nofoldenable' : 'foldenable'<CR><
 " }}}
 " vimrc auto-reload {{{
 if has("autocmd")
-    autocmd BufWritePost .vimrc source $MYVIMRC
-    autocmd BufWritePost vimrc source $MYVIMRC
-    autocmd BufWritePost vimrc.symlink source $MYVIMRC
+    autocmd BufWritePost .vimrc source $MYVIMRC        | doautocmd BufRead
+    autocmd BufWritePost vimrc source $MYVIMRC         | doautocmd BufRead
+    autocmd BufWritePost vimrc.symlink source $MYVIMRC | doautocmd BufRead
 endif
 " }}}
 " Disable Arrow Keys {{{
