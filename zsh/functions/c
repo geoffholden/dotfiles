@@ -1,4 +1,4 @@
-if [ -d $GOPATH/src/github.com/geoffholden/$1 ]; then
+if [ ! -z $1 -a -d $GOPATH/src/github.com/geoffholden/$1 ]; then
     cd $GOPATH/src/github.com/geoffholden/$1
 else
     cd "$PROJECTS/$1"
