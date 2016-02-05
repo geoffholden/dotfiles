@@ -12,3 +12,5 @@ endfunction
 
 autocmd BufWritePost * silent call MakeIfMakefile()
 
+set spell
+
