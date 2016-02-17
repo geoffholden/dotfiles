@@ -85,6 +85,9 @@ map ,w :call StripWhitespace ()<CR>
 " }}}
 " VimCompletesMe {{{
 autocmd FileType text,markdown let b:vcm_tab_complete = 'dict'
+
+" Don't autocomplete after a -
+inoremap -<Tab> -<Tab>
 " }}}
 " easy-align {{{
 " Start interactive EasyAlign in visual mode (e.g. vipga)
