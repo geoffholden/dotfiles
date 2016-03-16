@@ -26,6 +26,7 @@ Plug 'ConradIrwin/vim-bracketed-paste'
 Plug 'scrooloose/syntastic'
 Plug 'spiiph/vim-space'
 Plug 'junegunn/vim-easy-align'
+Plug 'cespare/vim-toml', { 'for': 'toml' }
 " Syntax Only
 Plug 'aklt/plantuml-syntax'
 Plug 'freitass/todo.txt-vim'
@@ -188,5 +189,9 @@ if has('eval') && has('autocmd')
     autocmd BufReadPre * call BigFileMeasures()
   augroup end
 endif
+" }}}
+" Misc Mappings {{{
+nmap S :%s//g<LEFT><LEFT>
+nmap <expr> M ':%s/' . @/ . '//g<LEFT><LEFT>'
 " }}}
 " vim:foldmethod=marker:foldlevel=0:foldenable
