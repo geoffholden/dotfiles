@@ -5,7 +5,7 @@ noremap j gj
 noremap k gk
 
 function! MakeIfMakefile()
-    if filereadable("./Makefile")
+    if filereadable("./Makefile") && !filereadable("./config.toml")
         Make!
     endif
 endfunction
