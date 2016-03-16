@@ -27,6 +27,7 @@ Plug 'scrooloose/syntastic'
 Plug 'spiiph/vim-space'
 Plug 'junegunn/vim-easy-align'
 Plug 'cespare/vim-toml', { 'for': 'toml' }
+Plug 'amperser/proselint', { 'rtp': 'plugins/vim/syntastic_proselint' }
 " Syntax Only
 Plug 'aklt/plantuml-syntax'
 Plug 'freitass/todo.txt-vim'
@@ -161,6 +162,16 @@ let g:VimuxUseNearest = 0
 let g:markdownfmt_command = 'mdfmt'
 let g:markdownfmt_autosave = 1
 let g:markdown_fenced_languages = ['cpp', 'go', 'ditaa', 'dot', 'plantuml']
+" }}}
+" syntastic {{{
+let g:syntastic_always_populate_loc_list = 1
+" }}}
+" proselint {{{
+let g:syntastic_markdown_checkers = ['proselint']
+let g:syntastic_text_checkers = ['proselint']
+let g:syntastic_html_checkers = ['tidy', 'w3', 'proselint']
+let g:syntastic_xhtml_checkers = ['tidy', 'w3', 'proselint']
+let g:syntastic_tex_checkers = ['proselint']
 " }}}
 " Large File Function {{{
 " https://github.com/tejr/dotfiles/blob/4f9e40bc40242a8e110ad87908936c835ad1b804/vim/vimrc#L565-L579
