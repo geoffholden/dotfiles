@@ -14,3 +14,5 @@ autocmd BufWritePost * silent call MakeIfMakefile()
 
 set spell
 
+iab <expr> dts systemlist("gdate +'\%Y-\%m-\%dT\%H:\%M:\%S\%:z'")[0]
+
