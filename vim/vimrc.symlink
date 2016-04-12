@@ -34,6 +34,10 @@ Plug 'freitass/todo.txt-vim'
 Plug 'vim-scripts/ditaa'
 Plug 'tpope/vim-markdown', { 'for': 'markdown' }
 Plug 'tpope/vim-git'
+" Python
+Plug 'tmhedberg/SimpylFold', { 'for': 'python' }
+Plug 'vim-scripts/indentpython.vim', { 'for': 'python' }
+Plug 'nvie/vim-flake8', { 'for': 'python' }
 call plug#end()
 " }}}
 " Theme {{{
@@ -172,6 +176,9 @@ let g:syntastic_text_checkers = ['proselint']
 let g:syntastic_html_checkers = ['tidy', 'w3', 'proselint']
 let g:syntastic_xhtml_checkers = ['tidy', 'w3', 'proselint']
 let g:syntastic_tex_checkers = ['proselint']
+" }}}
+" Python {{{
+let g:SimpylFold_docstring_preview=1
 " }}}
 " Large File Function {{{
 " https://github.com/tejr/dotfiles/blob/4f9e40bc40242a8e110ad87908936c835ad1b804/vim/vimrc#L565-L579
