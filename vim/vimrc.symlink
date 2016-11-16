@@ -6,6 +6,9 @@ set encoding=utf-8
 set dictionary=/usr/share/dict/words
 filetype off
 autocmd!
+
+set splitright
+set splitbelow
 " }}}
 " Plugins {{{
 call plug#begin('~/.vim/plugged')
