@@ -42,6 +42,9 @@ Plug 'tmhedberg/SimpylFold', { 'for': 'python' }
 Plug 'vim-scripts/indentpython.vim', { 'for': 'python' }
 Plug 'nvie/vim-flake8', { 'for': 'python' }
 Plug 'Chiel92/vim-autoformat', { 'for': 'python' } " Limit this to Python for now.
+" JavaScript/JSX
+Plug 'pangloss/vim-javascript', { 'for': ['javascript','javascript.jsx'] }
+Plug 'mxw/vim-jsx', { 'for': 'javascript.jsx' }
 call plug#end()
 " }}}
 " Theme {{{
