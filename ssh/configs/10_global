@@ -1,2 +1,5 @@
 HashKnownHosts no
 
+Host *
+    ServerAliveInterval 60
+
