@@ -6,6 +6,9 @@ set encoding=utf-8
 set dictionary=/usr/share/dict/words
 filetype off
 autocmd!
+
+set splitright
+set splitbelow
 " }}}
 " Plugins {{{
 call plug#begin('~/.vim/plugged')
@@ -38,6 +41,10 @@ Plug 'tpope/vim-git'
 Plug 'tmhedberg/SimpylFold', { 'for': 'python' }
 Plug 'vim-scripts/indentpython.vim', { 'for': 'python' }
 Plug 'nvie/vim-flake8', { 'for': 'python' }
+Plug 'Chiel92/vim-autoformat', { 'for': 'python' } " Limit this to Python for now.
+" JavaScript/JSX
+Plug 'pangloss/vim-javascript', { 'for': ['javascript','javascript.jsx'] }
+Plug 'mxw/vim-jsx', { 'for': 'javascript.jsx' }
 call plug#end()
 " }}}
 " Theme {{{
@@ -165,7 +172,7 @@ let g:VimuxUseNearest = 0
 " markdownfmt {{{
 let g:markdownfmt_command = 'mdfmt'
 let g:markdownfmt_autosave = 1
-let g:markdown_fenced_languages = ['cpp', 'go', 'ditaa', 'dot', 'plantuml']
+let g:markdown_fenced_languages = ['cpp', 'go', 'ditaa', 'dot', 'plantuml', 'python']
 " }}}
 " syntastic {{{
 let g:syntastic_always_populate_loc_list = 1
@@ -179,6 +186,7 @@ let g:syntastic_tex_checkers = ['proselint']
 " }}}
 " Python {{{
 let g:SimpylFold_docstring_preview=1
+let g:flake8_max_line_length=120
 " }}}
 " Large File Function {{{
 " https://github.com/tejr/dotfiles/blob/4f9e40bc40242a8e110ad87908936c835ad1b804/vim/vimrc#L565-L579

@@ -1,6 +1,6 @@
 set linebreak
 set breakindent
-set showbreak=\ \ \ \ 
+set breakindentopt=shift:4
 noremap j gj
 noremap k gk
 
