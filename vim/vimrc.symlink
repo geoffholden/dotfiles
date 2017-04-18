@@ -187,6 +187,7 @@ let g:syntastic_tex_checkers = ['proselint']
 " Python {{{
 let g:SimpylFold_docstring_preview=1
 let g:flake8_max_line_length=120
+let g:syntastic_python_checkers=["python", "flake8"]
 " }}}
 " Large File Function {{{
 " https://github.com/tejr/dotfiles/blob/4f9e40bc40242a8e110ad87908936c835ad1b804/vim/vimrc#L565-L579
