@@ -16,3 +16,9 @@ set spell
 
 iab <expr> dts systemlist("gdate +'\%Y-\%m-\%dT\%H:\%M:\%S\%:z'")[0]
 
+" VimCompletesMe {{{
+let b:vcm_tab_complete = 'dict'
+" Don't autocomplete after a -
+inoremap -<Tab> -<Tab>
+" }}}
+

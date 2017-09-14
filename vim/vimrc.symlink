@@ -1,7 +1,8 @@
 " General Options {{{
+" vint: -ProhibitSetNoCompatible
 set nocompatible
-scriptencoding utf-8
 set encoding=utf-8
+scriptencoding utf-8
 
 set dictionary=/usr/share/dict/words
 filetype off
@@ -63,7 +64,7 @@ set scrolloff=4
 set cursorline
 set statusline=%F%m%r%h%w\ %{fugitive#statusline()}\ [%l,%c]\ [%L,%p%%]
 set laststatus=2
-let mapleader = ","
+let g:mapleader = ','
 set spelllang=en_ca
 set nospell
 set listchars=tab:▸\ ,eol:¬
@@ -96,12 +97,6 @@ function! StripWhitespace ()
 endfunction
 map ,w :call StripWhitespace ()<CR>
 " }}}
-" VimCompletesMe {{{
-autocmd FileType text,markdown let b:vcm_tab_complete = 'dict'
-
-" Don't autocomplete after a -
-inoremap -<Tab> -<Tab>
-" }}}
 " easy-align {{{
 " Start interactive EasyAlign in visual mode (e.g. vipga)
 xmap ga <Plug>(EasyAlign)
@@ -117,6 +112,7 @@ let g:airline_powerline_fonts = 1
 if !exists('g:airline_symbols')
   let g:airline_symbols = {}
 endif
+" vint: -ProhibitUnnecessaryDoubleQuote
 let g:airline_symbols.space = "\ua0"
 
 let g:airline#extensions#default#section_truncate_width = {
@@ -140,10 +136,13 @@ nnoremap ]of :set nofoldenable<CR>
 nnoremap cof :set <C-R>=eval('&foldenable') ? 'nofoldenable' : 'foldenable'<CR><CR>
 " }}}
 " vimrc auto-reload {{{
-if has("autocmd")
-    autocmd BufWritePost .vimrc source $MYVIMRC        | doautocmd BufRead
-    autocmd BufWritePost vimrc source $MYVIMRC         | doautocmd BufRead
-    autocmd BufWritePost vimrc.symlink source $MYVIMRC | doautocmd BufRead
+if has('autocmd')
+    augroup vimrc
+        autocmd!
+        autocmd BufWritePost .vimrc source $MYVIMRC        | doautocmd BufRead
+        autocmd BufWritePost vimrc source $MYVIMRC         | doautocmd BufRead
+        autocmd BufWritePost vimrc.symlink source $MYVIMRC | doautocmd BufRead
+    augroup END
 endif
 " }}}
 " Disable Arrow Keys {{{
@@ -187,7 +186,7 @@ let g:syntastic_tex_checkers = ['proselint']
 " Python {{{
 let g:SimpylFold_docstring_preview=1
 let g:flake8_max_line_length=120
-let g:syntastic_python_checkers=["python", "flake8"]
+let g:syntastic_python_checkers=['python', 'flake8']
 " }}}
 " Large File Function {{{
 " https://github.com/tejr/dotfiles/blob/4f9e40bc40242a8e110ad87908936c835ad1b804/vim/vimrc#L565-L579
@@ -199,7 +198,7 @@ if has('eval') && has('autocmd')
 
   " Declare function for turning off slow options
   function! BigFileMeasures()
-    let l:file = expand("<afile>")
+    let l:file = expand('<afile>')
     if getfsize(l:file) > g:bigfilesize
       setlocal nobackup
       setlocal nowritebackup

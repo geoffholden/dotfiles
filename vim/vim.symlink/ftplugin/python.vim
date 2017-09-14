@@ -6,4 +6,7 @@ set expandtab
 set autoindent
 set fileformat=unix
 
-au BufWrite * :Autoformat
+augroup python
+    autocmd!
+    autocmd BufWrite * :Autoformat
+augroup END
