@@ -1,6 +1,7 @@
 [user]
     name = Geoff Holden
     email = geoff@geoffholden.com
+	signingkey = 585DC1B0D5D8096A
 
 [color]
     ui = auto
