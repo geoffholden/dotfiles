@@ -14,7 +14,7 @@ autocmd BufWritePost * silent call MakeIfMakefile()
 
 set spell
 
-iab <expr> dts systemlist("gdate +'\%Y-\%m-\%dT\%H:\%M:\%S\%:z'")[0]
+iab <expr> dts substitute(strftime("%Y-%m-%dT%H:%M:%S%z"), '\([+-]\)\([0-9]\+\)\([0-9][0-9]\)$', '\1\2:\3', '')
 
 " VimCompletesMe {{{
 let b:vcm_tab_complete = 'dict'
