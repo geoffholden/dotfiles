@@ -2,4 +2,6 @@ HashKnownHosts no
 
 Host *
     ServerAliveInterval 60
+    AddKeysToAgent yes
+    UseKeychain yes
 
