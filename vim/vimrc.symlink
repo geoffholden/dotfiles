@@ -27,7 +27,8 @@ Plug 'moorereason/vim-markdownfmt', { 'for': 'markdown' }
 Plug 'tpope/vim-unimpaired'
 Plug 'benmills/vimux'
 Plug 'ConradIrwin/vim-bracketed-paste'
-Plug 'scrooloose/syntastic'
+" Plug 'scrooloose/syntastic'
+" Plug 'w0rp/ale'
 Plug 'spiiph/vim-space'
 Plug 'junegunn/vim-easy-align'
 Plug 'cespare/vim-toml', { 'for': 'toml' }
@@ -53,6 +54,7 @@ set t_Co=256
 colorscheme molokai
 
 syntax enable
+set guifont=Menlo\ for\ Powerline\ 10
 " }}}
 " Vim UI {{{
 set noswapfile
